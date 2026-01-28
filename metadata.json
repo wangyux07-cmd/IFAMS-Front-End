@@ -1,0 +1,8 @@
+{
+  "name": "Individual Financial Asset Management System",
+  "description": "",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}

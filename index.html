@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+    <title>Steady Emerald - Executive Wealth Hub</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "brand-emerald": "#10B981",
+                        "accent-gold": "#D4AF37",
+                        "background-light": "#f6f8f6",
+                        "background-dark": "#0A0A0A",
+                        "card-dark": "#0D1A14",
+                    },
+                    fontFamily: {
+                        "publicSans": ["Public Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "xl": "0.75rem",
+                        "2xl": "1rem",
+                    },
+                    animation: {
+                        "fade-in": "fadeIn 0.3s ease-out forwards",
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            "0%": { opacity: "0", transform: "translateY(10px)" },
+                            "100%": { opacity: "1", transform: "translateY(0)" },
+                        }
+                    }
+                },
+            },
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer base {
+            body {
+                @apply bg-background-light dark:bg-background-dark text-slate-900 dark:text-white font-publicSans overflow-x-hidden antialiased;
+                -webkit-tap-highlight-color: transparent;
+            }
+        }
+        
+        .glass-panel {
+            background: rgba(13, 26, 20, 0.8);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+
+        /* Chart Styles - Updated to Harmonious Green/Yellow Theme */
+        .semi-donut {
+            width: 240px; height: 120px;
+            position: relative;
+            border-top-left-radius: 120px; border-top-right-radius: 120px;
+            overflow: hidden;
+            flex-shrink: 0;
+            background: conic-gradient(
+                from 270deg at 50% 100%, 
+                #10B981 0% 27.5%,      /* Equities - Emerald */
+                #6EE7B7 27.5% 37.5%,   /* Fixed - Light Emerald */
+                #2DD4BF 37.5% 45%,     /* Insurance - Teal */
+                #A3E635 45% 50%,       /* FX - Lime */
+                #FCD34D 50% 55%,       /* Cash - Gold */
+                #0D1A14 55% 100%       /* BG */
+            );
+        }
+        .semi-donut::after {
+            content: ''; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%);
+            width: 160px; height: 80px; background: #0D1A14;
+            border-top-left-radius: 80px; border-top-right-radius: 80px;
+        }
+
+        .ai-pulse-glow {
+            box-shadow: 0 0 20px rgba(16, 185, 129, 0.4), 0 0 40px rgba(16, 185, 129, 0.1);
+        }
+
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "react/": "https://esm.sh/react@^19.2.4/",
+    "react": "https://esm.sh/react@^19.2.4",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+    "react-router-dom": "https://esm.sh/react-router-dom@^7.13.0",
+    "@google/genai": "https://esm.sh/@google/genai@^1.38.0"
+  }
+}
+</script>
+</head>
+<body class="dark">
+    <div id="root"></div>
+</body>
+</html>
